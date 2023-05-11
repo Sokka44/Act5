@@ -6,6 +6,7 @@ Exercises:
 2. Decrease the number of tiles to a 4x4 grid.
 3. Detect when all tiles are revealed.
 4. Center single-digit tile.
+5. Use letters instead of tiles.
 """
 
 from random import *
