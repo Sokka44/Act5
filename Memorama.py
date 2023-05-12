@@ -52,10 +52,19 @@ def tap(x, y):
         hide[mark] = False
         state['mark'] = None
 
+    # Checar si todos los pares han sido encontrados
+        if all(not hidden for hidden in hide):
+            show_message("Felicidades! Has completado el juego.")
+
     # Modifcar el contador cada vez
     counter_turtle.clear()
     counter_turtle.write("Contador: {}".format(touch_count),
                          align='left', font=('Arial', 12, 'normal'))
+         
+# Definir la función show message
+def show_message(message):
+    message_turtle.clear()
+    message_turtle.write(message, align='center', font=('Arial', 16, 'normal'))
 
 
 def draw():
@@ -91,6 +100,12 @@ counter_turtle.up()
 # Ajustar la posición del contador en la pantalla
 counter_turtle.goto(-190, 200)
 counter_turtle.write("Contador: 0", align='left', font=('Arial', 12, 'normal'))
+
+# Mensaje de felicidades
+message_turtle = Turtle()
+message_turtle.hideturtle()
+message_turtle.up()
+message_turtle.goto(0, -180)
 
 shuffle(tiles)
 setup(420, 420, 370, 0)
